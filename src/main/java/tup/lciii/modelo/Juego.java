@@ -31,6 +31,7 @@ public class Juego {
     }
 
     public int getCantidadJugadores() {
+        return jugadores.size();
         //TODO
     }
 
@@ -44,6 +45,13 @@ public class Juego {
      * @param nombresDeJugadores Una lista de nombres de jugadores.
      */
     public void iniciarJugadores(ArrayList<String> nombresDeJugadores) {
+        for(String nombre : nombresDeJugadores) {
+            Jugador jugador = new Jugador(nombre, false);
+            if(jugadores.isEmpty()){
+                jugador.setEsTurno(true);
+            }
+            jugadores.add(jugador);
+        }
         //TODO
     }
 
@@ -60,7 +68,11 @@ public class Juego {
      * @see Mazo#mezclarMazo()
      */
     public void mezclarMazoYrepartirCartas() {
-        //TODO
+        mazo.mezclarMazo();
+        for(Jugador jugador: jugadores){
+            mazo.repartirCartas(jugador);
+        }
+        //TODOok    -
     }
 
     /**

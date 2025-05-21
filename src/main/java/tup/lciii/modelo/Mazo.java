@@ -23,6 +23,7 @@ public class Mazo {
      * @return El tamaño del mazo, es decir, el número de cartas.
      */
     public int getMazoLength() {
+        return mazo.size();
         //TODO
     }
 
@@ -40,7 +41,12 @@ public class Mazo {
      * de valores y palos.
      */
     public void generarMazo() {
-        //TODO
+        for(Palo palo : Palo.values()) {
+            for(int i = 1; i < 13; i++) {
+                mazo.add(new Carta(i, palo));
+            }
+        }
+        //TODOok
     }
 
     /**
@@ -55,6 +61,7 @@ public class Mazo {
      * @see java.util.Collections#shuffle(List)
      */
     public void mezclarMazo() {
+        Collections.shuffle(mazo);
         //TODO
     }
 

@@ -51,5 +51,10 @@ public class Mesa {
      */
 
     public void vaciarMesa(Mazo mazo) {
+        for (Carta carta : mesa) {
+            mazo.getMazo().add(carta);
+        }
+        mesa.clear();
         //TODO
+    }
 }
